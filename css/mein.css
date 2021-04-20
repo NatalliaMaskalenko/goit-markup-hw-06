@@ -5,6 +5,7 @@ body {
 
   font-family: Roboto, sans-serif;
   font-weight: 400;
+  font-size: 16px;
 }
 
 :root {
@@ -15,6 +16,7 @@ body {
   --color-text-major: #212121;
   --color-text-main: #757575;
   --color-icon: #afb1b8;
+  --color-footer-form: rgba(255, 255, 255, 0.6);
   --background-color-work: rgba(47, 48, 58, 0.8);
   --background-color-gallery: rgba(33, 150, 243, 0.9);
   --background-color-modal: rgba(0, 0, 0, 0.2);
@@ -238,7 +240,6 @@ img {
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   font-weight: 700;
-  font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -397,7 +398,6 @@ img {
   color: var(--color-text-major);
 
   font-weight: 500;
-  font-size: 16px;
   line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
@@ -406,7 +406,6 @@ img {
 }
 
 .team-member {
-  font-size: 16px;
   line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
@@ -518,7 +517,6 @@ img {
   color: var(--color-text-major);
 
   font-weight: 500;
-  font-size: 16px;
   line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
@@ -629,7 +627,6 @@ img {
 }
 
 .gallery-name {
-  font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
 
@@ -651,7 +648,8 @@ img {
   align-items: baseline;
 }
 
-.footer section {
+.footer-adress,
+.footer-networks {
   margin-left: 30px;
   margin-top: 30px;
   flex-basis: calc(100% / 4 - 30px);
@@ -704,7 +702,7 @@ img {
   margin-right: 10px;
 }
 
-.footer-networks-title {
+.footer-title {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
@@ -729,8 +727,77 @@ img {
   background-color: var(--color-accent);
 }
 
-/* Модальное окно - Заказать услугу */
+.footer-section-form {
+  flex-basis: calc(100% / 2 - 30px);
+  margin-left: 30px;
+}
 
+.footer-form {
+  display: flex;
+}
+
+.footer-form-input {
+  margin-right: 10px;
+  padding: 15px 16px 15px 16px;
+  min-width: 358px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: transparent;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: var(--color-footer-form);
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form-input:focus,
+.footer-form-input:hover {
+  border-color: var(--color-accent);
+}
+
+.footer-form-input::placeholder {
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: var(--color-footer-form);
+}
+
+.footer-form-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 29px 10px 28px;
+  min-width: 200px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form-btn:hover,
+.footer-form-btn:focus {
+  color: var(--color-accent);
+  background-color: var(--color-white);
+}
+
+.icon-footer-send {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  fill: var(--color-white);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form-btn:hover .icon-footer-send,
+.footer-form-btn:focus .icon-footer-send {
+  fill: var(--color-accent);
+}
+
+/* Модальное окно - Заказать услугу */
 .backdrop {
   position: fixed;
   top: 0;
@@ -759,8 +826,9 @@ img {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
+  padding: 40px;
   min-height: 581px;
-  min-width: 528px;
+  width: 528px;
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -784,4 +852,166 @@ img {
 .modal-icon {
   width: 18px;
   height: 18px;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-close:hover .modal-icon,
+.btn-close:focus .modal-icon {
+  fill: var(--color-accent);
+}
+
+.modal-title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--color-text-major);
+}
+
+.form-wrap {
+  position: relative;
+}
+
+.form-text {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+
+.modal-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.modal-input {
+  padding: 11px 12px 11px 42px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-label:hover .modal-input,
+.modal-label:focus .modal-input {
+  border-color: var(--color-accent);
+}
+
+.icon-form {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 18px;
+  fill: var(--color-text-major);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-label:hover .icon-form,
+.modal-label:focus .icon-form {
+  fill: var(--color-accent);
+}
+
+.label-textarea {
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  color: inherit;
+}
+
+.form-textarea {
+  width: 100%;
+  resize: none;
+
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-textarea:hover,
+.form-textarea:focus {
+  border-color: var(--color-accent);
+}
+
+.form-textarea::placeholder {
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-label-checkbox {
+  position: relative;
+  padding-left: 24px;
+  font-size: 14px;
+  line-height: 1.71px;
+  letter-spacing: 0.03em;
+}
+
+.modal-label-checkbox a {
+  color: var(--color-accent);
+}
+
+.icon-checkbox {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  transform: translateY(-50%);
+
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--color-text-major);
+  border-radius: 1px;
+  border-radius: 2px;
+
+  background-color: transparent;
+}
+
+.input-checkbox:checked + .icon-checkbox {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  background-image: url(../images/background/Vector.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.form-btn {
+  display: block;
+
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 56px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--color-white);
+  background-color: var(--color-accent);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-btn:hover,
+.form-btn:focus {
+  background-color: var(--background-color-elements);
+  color: var(--color-accent);
 }

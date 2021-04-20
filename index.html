@@ -551,7 +551,7 @@
             </address>
           </section>
           <section class="footer-networks">
-            <h2 class="footer-networks-title">присоединяйтесь</h2>
+            <h2 class="footer-title">присоединяйтесь</h2>
             <ul class="networks list">
               <li class="networks-item">
                 <a class="networks-link" href="/" aria-label="instagram">
@@ -609,9 +609,29 @@
               </li>
             </ul>
           </section>
+          <section class="footer-section-form">
+            <h2 class="footer-title">Подпишитесь на рассылку</h2>
+            <form class="footer-form">
+              <input
+                type="email"
+                class="footer-form-input"
+                name="email"
+                placeholder="E-mail"
+              />
+              <button class="footer-form-btn" type="submit">
+                <span>Подписаться</span>
+                <svg class="icon-footer-send">
+                  <use
+                    href="./images/background/icons.svg#icon-icon-send"
+                  ></use>
+                </svg>
+              </button>
+            </form>
+          </section>
         </div>
       </div>
     </footer>
+    <!-- Модальное окно - ЗАКАЗАТЬ УСЛУГУ -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="btn-close" data-modal-close>
@@ -621,6 +641,64 @@
             ></use>
           </svg>
         </button>
+        <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+        <form action="">
+          <label class="modal-label">
+            <span class="form-text">Имя</span>
+            <div class="form-wrap">
+              <input class="modal-input" type="text" name="username" />
+              <svg class="icon-form">
+                <use
+                  href="./images/background/icons.svg#icon-person-black-18dp-1"
+                ></use>
+              </svg>
+            </div>
+          </label>
+          <label class="modal-label">
+            <span class="form-text">Телефон</span>
+            <div class="form-wrap">
+              <input class="modal-input" type="phone" name="phone-number" />
+              <svg class="icon-form">
+                <use
+                  href="./images/background/icons.svg#icon-phone-black-18dp-1"
+                ></use>
+              </svg>
+            </div>
+          </label>
+          <label class="modal-label">
+            <span class="form-text">Почта</span>
+            <div class="form-wrap">
+              <input class="modal-input" type="email" name="email" />
+              <svg class="icon-form">
+                <use
+                  href="./images/background/icons.svg#icon-email-black-18dp-1"
+                ></use>
+              </svg>
+            </div>
+          </label>
+          <label class="label-textarea">
+            <span class="form-text">Комментарий</span>
+            <textarea
+              class="form-textarea"
+              name="feedback"
+              rows="8"
+              placeholder="Введите текст"
+            ></textarea>
+          </label>
+          <label class="modal-label-checkbox">
+            <input
+              class="input-checkbox visually-hidden"
+              type="checkbox"
+              name="agreement"
+            />
+            <svg class="icon-checkbox">
+              <use href="./images/background/icons.svg#icon-Vector"></use>
+            </svg>
+            Соглашаюсь с рассылкой и принимаю
+            <a href="./"> Условия договора</a>
+          </label>
+          <button class="form-btn" type="submit">Отправить</button>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
